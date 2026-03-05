@@ -8,4 +8,4 @@ A dashboard to monitor bolt manufacturing processes including:
 - Workflow visualization
 - Standard work documentation
 
-Supports English and Japanese UI.
+Supports English and Japanese UI.# Smart-Bolt-Manufacturing-
