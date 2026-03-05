@@ -33,11 +33,11 @@ export default function ParetoChart() {
   }, []);
 
   if (loading) {
-    return <div className={styles.container}>Loading defect data...</div>;
+    return <div className={styles.container}>{t('loading_defects')}</div>;
   }
 
   if (defects.length === 0) {
-    return <div className={styles.container}>No defect data available</div>;
+    return <div className={styles.container}>{t('no_defects')}</div>;
   }
 
   // Calculate cumulative percentage for Pareto line
@@ -51,11 +51,11 @@ export default function ParetoChart() {
 
   return (
     <div className={styles.container}>
-      <h2 className={styles.title}>Pareto Analysis - Defects</h2>
+      <h2 className={styles.title}>{t('pareto_title')}</h2>
 
       <div className={styles.chartContainer}>
         <div className={styles.chart}>
-          <div className={styles.yAxisLabel}>Defect Count</div>
+          <div className={styles.yAxisLabel}>{t('defect_count_label')}</div>
           <div className={styles.bars}>
             {defects.map((defect, index) => (
               <div key={index} className={styles.barWrapper}>
@@ -81,34 +81,34 @@ export default function ParetoChart() {
               </div>
             ))}
           </div>
-          <div className={styles.xAxisLabel}>Defect Type</div>
+          <div className={styles.xAxisLabel}>{t('defect_type_label')}</div>
         </div>
 
         <div className={styles.legend}>
           <div className={styles.legendItem}>
             <div className={styles.legendBar}></div>
-            <span>Number of Defects</span>
+            <span>{t('number_of_defects')}</span>
           </div>
           <div className={styles.legendItem}>
             <div className={`${styles.legendDot} ${styles.cumulative}`}></div>
-            <span>Cumulative %</span>
+            <span>{t('cumulative_percent')}</span>
           </div>
         </div>
       </div>
 
       <div className={styles.summary}>
         <div className={styles.summaryItem}>
-          <span className={styles.summaryLabel}>Top Defect:</span>
+          <span className={styles.summaryLabel}>{t('top_defect')}:</span>
           <span className={styles.summaryValue}>{defects[0]?.type}</span>
         </div>
         <div className={styles.summaryItem}>
-          <span className={styles.summaryLabel}>Total Defects:</span>
+          <span className={styles.summaryLabel}>{t('total_defects')}:</span>
           <span className={styles.summaryValue}>
             {defects.reduce((sum, d) => sum + d.count, 0)}
           </span>
         </div>
         <div className={styles.summaryItem}>
-          <span className={styles.summaryLabel}>80% Coverage:</span>
+          <span className={styles.summaryLabel}>{t('coverage_80')}:</span>
           <span className={styles.summaryValue}>
             {defects
               .slice(0, defects.findIndex((_, i) => cumulativePercentages[i] >= 80) + 1)

@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import styles from './KPIWidget.module.css';
 
 interface KPIWidgetProps {
@@ -17,6 +18,7 @@ export default function KPIWidget({
   status = 'optimal',
   trend = 'stable',
 }: KPIWidgetProps) {
+  const { t } = useTranslation();
   const getStatusColor = () => {
     switch (status) {
       case 'optimal':
@@ -58,7 +60,7 @@ export default function KPIWidget({
         
         {target && (
           <div className={styles.meta}>
-            <span className={styles.label}>Target:</span>
+            <span className={styles.label}>{t('target')}:</span>
             <span className={styles.target}>{target}{unit}</span>
             <span className={`${styles.variance} ${variance && parseFloat(variance) > 0 ? styles.positive : styles.negative}`}>
               {variance && (variance > 0 ? '+' : '')}{variance}%

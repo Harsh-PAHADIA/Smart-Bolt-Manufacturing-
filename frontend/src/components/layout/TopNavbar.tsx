@@ -16,7 +16,7 @@ export default function TopNavbar() {
         <div className={styles.spacer}></div>
         <div className={styles.status}>
           <span className={styles.online}></span>
-          <span>Live Monitoring</span>
+          <span>{t('live_monitoring')}</span>
         </div>
         <button 
           className={styles.languageBtn}

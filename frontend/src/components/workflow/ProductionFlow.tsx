@@ -53,12 +53,12 @@ export default function ProductionFlow() {
   };
 
   if (loading) {
-    return <div className={styles.container}>Loading workflow...</div>;
+    return <div className={styles.container}>{t('loading_workflow')}</div>;
   }
 
   return (
     <div className={styles.container}>
-      <h2 className={styles.title}>Production Workflow</h2>
+      <h2 className={styles.title}>{t('workflow_title')}</h2>
       
       <div className={styles.flowContainer}>
         {stages.map((stage, index) => (
@@ -68,11 +68,11 @@ export default function ProductionFlow() {
               <h3 className={styles.stageName}>{stage.stageName}</h3>
               <div className={styles.stageDetails}>
                 <div className={styles.detailItem}>
-                  <span className={styles.label}>Qty:</span>
+                  <span className={styles.label}>{t('qty')}:</span>
                   <span className={styles.value}>{stage.quantity}</span>
                 </div>
                 <div className={styles.detailItem}>
-                  <span className={styles.label}>Efficiency:</span>
+                  <span className={styles.label}>{t('efficiency')}:</span>
                   <span className={styles.value}>{stage.efficiency}%</span>
                 </div>
               </div>
@@ -96,15 +96,15 @@ export default function ProductionFlow() {
       <div className={styles.legend}>
         <div className={styles.legendItem}>
           <span className={styles.legendColor} style={{ backgroundColor: '#10b981' }}></span>
-          <span>Completed</span>
+          <span>{t('status_completed')}</span>
         </div>
         <div className={styles.legendItem}>
           <span className={styles.legendColor} style={{ backgroundColor: '#f59e0b' }}></span>
-          <span>In Progress</span>
+          <span>{t('status_in_progress')}</span>
         </div>
         <div className={styles.legendItem}>
           <span className={styles.legendColor} style={{ backgroundColor: '#9ca3af' }}></span>
-          <span>Queued</span>
+          <span>{t('status_queued')}</span>
         </div>
       </div>
     </div>

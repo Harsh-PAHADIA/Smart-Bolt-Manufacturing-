@@ -1,7 +1,10 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import styles from './RootCauseForm.module.css';
 
 export default function RootCauseForm() {
+  const { t } = useTranslation();
+
   const [formData, setFormData] = useState({
     defectType: '',
     stage: '',
@@ -27,17 +30,17 @@ export default function RootCauseForm() {
       rootCause: '',
       countermeasure: '',
     });
-    alert('Root cause analysis submitted!');
+    alert(t('analysis_submitted'));
   };
 
   return (
     <div className={styles.container}>
-      <h2 className={styles.title}>Root Cause Analysis Form</h2>
+      <h2 className={styles.title}>{t('root_cause_form')}</h2>
 
       <form onSubmit={handleSubmit} className={styles.form}>
         <div className={styles.formGroup}>
           <label htmlFor="defectType" className={styles.label}>
-            Defect Type
+            {t('defect_type')}
           </label>
           <select
             id="defectType"
@@ -47,17 +50,17 @@ export default function RootCauseForm() {
             className={styles.select}
             required
           >
-            <option value="">Select defect type...</option>
-            <option value="Crack">Surface Crack</option>
-            <option value="ThreadError">Thread Error</option>
-            <option value="Hardness">Hardness Issue</option>
-            <option value="Dimension">Dimensional Error</option>
+            <option value="">{t('select_defect_type')}</option>
+            <option value="Crack">{t('defect_crack')}</option>
+            <option value="ThreadError">{t('defect_thread_error')}</option>
+            <option value="Hardness">{t('defect_hardness')}</option>
+            <option value="Dimension">{t('defect_dimension')}</option>
           </select>
         </div>
 
         <div className={styles.formGroup}>
           <label htmlFor="stage" className={styles.label}>
-            Production Stage
+            {t('production_stage')}
           </label>
           <select
             id="stage"
@@ -67,17 +70,17 @@ export default function RootCauseForm() {
             className={styles.select}
             required
           >
-            <option value="">Select stage...</option>
-            <option value="Cold Forging">Cold Forging</option>
-            <option value="Thread Rolling">Thread Rolling</option>
-            <option value="Heat Treatment">Heat Treatment</option>
-            <option value="Inspection">Inspection</option>
+            <option value="">{t('select_stage')}</option>
+            <option value="Cold Forging">{t('stage_cold_forging')}</option>
+            <option value="Thread Rolling">{t('stage_thread_rolling')}</option>
+            <option value="Heat Treatment">{t('stage_heat_treatment')}</option>
+            <option value="Inspection">{t('stage_inspection')}</option>
           </select>
         </div>
 
         <div className={styles.formGroup}>
           <label htmlFor="rootCause" className={styles.label}>
-            Root Cause Analysis
+            {t('root_cause_label')}
           </label>
           <textarea
             id="rootCause"
@@ -85,7 +88,7 @@ export default function RootCauseForm() {
             value={formData.rootCause}
             onChange={handleChange}
             className={styles.textarea}
-            placeholder="Describe the root cause..."
+            placeholder={t('root_cause_placeholder')}
             rows={4}
             required
           />
@@ -93,7 +96,7 @@ export default function RootCauseForm() {
 
         <div className={styles.formGroup}>
           <label htmlFor="countermeasure" className={styles.label}>
-            Countermeasure
+            {t('countermeasure')}
           </label>
           <textarea
             id="countermeasure"
@@ -101,14 +104,14 @@ export default function RootCauseForm() {
             value={formData.countermeasure}
             onChange={handleChange}
             className={styles.textarea}
-            placeholder="Describe the corrective action..."
+            placeholder={t('countermeasure_placeholder')}
             rows={4}
             required
           />
         </div>
 
         <button type="submit" className={styles.submitBtn}>
-          Submit Analysis
+          {t('submit_analysis')}
         </button>
       </form>
     </div>

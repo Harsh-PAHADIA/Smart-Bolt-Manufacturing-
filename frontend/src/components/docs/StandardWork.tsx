@@ -7,47 +7,47 @@ export default function StandardWork() {
   const steps = [
     {
       step: 1,
-      title: 'Load Raw Material',
+      titleKey: 'step_load_material',
       duration: '2 min',
-      details: 'Load steel bars into the loading hopper',
+      detailKey: 'step_load_material_detail',
     },
     {
       step: 2,
-      title: 'Cold Forging',
+      titleKey: 'step_cold_forging',
       duration: '12 sec',
-      details: 'High-speed forging under controlled pressure',
+      detailKey: 'step_cold_forging_detail',
     },
     {
       step: 3,
-      title: 'Thread Rolling',
+      titleKey: 'step_thread_rolling',
       duration: '8 sec',
-      details: 'Apply thread profile using precision rollers',
+      detailKey: 'step_thread_rolling_detail',
     },
     {
       step: 4,
-      title: 'Heat Treatment',
+      titleKey: 'step_heat_treatment',
       duration: '20 min',
-      details: 'Temperature cycling: 850°C hardening + tempering',
+      detailKey: 'step_heat_treatment_detail',
     },
     {
       step: 5,
-      title: 'Inspection',
+      titleKey: 'step_inspection',
       duration: '4 sec',
-      details: 'Automated vision + manual QC checks',
+      detailKey: 'step_inspection_detail',
     },
   ];
 
   return (
     <div className={styles.container}>
-      <h2 className={styles.title}>Standard Work Procedures</h2>
+      <h2 className={styles.title}>{t('standard_work')}</h2>
 
       <div className={styles.stepsContainer}>
         {steps.map((item, index) => (
           <div key={index} className={styles.step}>
             <div className={styles.stepNumber}>{item.step}</div>
             <div className={styles.stepContent}>
-              <h3 className={styles.stepTitle}>{item.title}</h3>
-              <p className={styles.stepDetails}>{item.details}</p>
+              <h3 className={styles.stepTitle}>{t(item.titleKey)}</h3>
+              <p className={styles.stepDetails}>{t(item.detailKey)}</p>
             </div>
             <div className={styles.stepDuration}>{item.duration}</div>
           </div>
@@ -55,7 +55,7 @@ export default function StandardWork() {
       </div>
 
       <div className={styles.totalTime}>
-        <strong>Total Cycle Time:</strong> ~47 seconds per unit
+        <strong>{t('total_cycle_time')}:</strong> {t('cycle_time_value')}
       </div>
     </div>
   );

@@ -55,9 +55,9 @@ export default function Home() {
     <DashboardLayout>
       <div className={styles.container}>
         <div className={styles.header}>
-          <h1>Smart Bolt Manufacturing Dashboard</h1>
+          <h1>{t('app_title')}</h1>
           <span className={styles.lastUpdate}>
-            Last updated: {lastUpdate}
+            {t('last_updated')}: {lastUpdate}
           </span>
         </div>
 
@@ -66,34 +66,34 @@ export default function Home() {
             className={`${styles.tab} ${activeTab === 'dashboard' ? styles.active : ''}`}
             onClick={() => setActiveTab('dashboard')}
           >
-            Dashboard
+            {t('nav_dashboard')}
           </button>
           <button
             className={`${styles.tab} ${activeTab === 'workflow' ? styles.active : ''}`}
             onClick={() => setActiveTab('workflow')}
           >
-            Production Flow
+            {t('nav_production')}
           </button>
           <button
             className={`${styles.tab} ${activeTab === 'defects' ? styles.active : ''}`}
             onClick={() => setActiveTab('defects')}
           >
-            Defect Analysis
+            {t('nav_defects')}
           </button>
           <button
             className={`${styles.tab} ${activeTab === 'docs' ? styles.active : ''}`}
             onClick={() => setActiveTab('docs')}
           >
-            Standard Work
+            {t('nav_docs')}
           </button>
         </div>
 
         {activeTab === 'dashboard' && (
           <div className={styles.content}>
             <section className={styles.section}>
-              <h2 className={styles.sectionTitle}>Key Performance Indicators</h2>
+              <h2 className={styles.sectionTitle}>{t('dashboard_title')}</h2>
               {loading ? (
-                <div className={styles.loading}>Loading KPI data...</div>
+                <div className={styles.loading}>{t('loading_kpi')}</div>
               ) : kpis ? (
                 <div className={styles.kpiGrid}>
                   <KPIWidget
@@ -113,7 +113,7 @@ export default function Home() {
                     trend="down"
                   />
                   <KPIWidget
-                    title="Machine Utilization"
+                    title={t('kpi_machine_utilization')}
                     value={kpis.machineUtilization.value}
                     unit={kpis.machineUtilization.unit}
                     target={kpis.machineUtilization.target}
@@ -121,7 +121,7 @@ export default function Home() {
                     trend="stable"
                   />
                   <KPIWidget
-                    title="Cycle Time"
+                    title={t('kpi_cycle_time')}
                     value={kpis.cycleTime.value}
                     unit={kpis.cycleTime.unit}
                     target={kpis.cycleTime.target}
@@ -130,7 +130,7 @@ export default function Home() {
                   />
                 </div>
               ) : (
-                <div className={styles.error}>Failed to load KPI data</div>
+                <div className={styles.error}>{t('failed_kpi')}</div>
               )}
             </section>
 
