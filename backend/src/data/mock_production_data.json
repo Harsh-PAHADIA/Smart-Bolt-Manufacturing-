@@ -1,0 +1,71 @@
+{
+  "kpiMetrics": {
+    "productionRate": {
+      "value": 125,
+      "unit": "units/hour",
+      "target": 120,
+      "status": "optimal",
+      "timestamp": "2026-03-05T10:30:00Z"
+    },
+    "defectRate": {
+      "value": 2.4,
+      "unit": "%",
+      "target": 3.0,
+      "status": "optimal",
+      "timestamp": "2026-03-05T10:30:00Z"
+    },
+    "machineUtilization": {
+      "value": 87.5,
+      "unit": "%",
+      "target": 85.0,
+      "status": "optimal",
+      "timestamp": "2026-03-05T10:30:00Z"
+    },
+    "cycleTime": {
+      "value": 28.8,
+      "unit": "seconds",
+      "target": 30.0,
+      "status": "optimal",
+      "timestamp": "2026-03-05T10:30:00Z"
+    }
+  },
+  "workflowStages": [
+    {
+      "stageName": "Raw Material",
+      "status": "completed",
+      "efficiency": 100,
+      "quantity": 150
+    },
+    {
+      "stageName": "Cold Forging",
+      "status": "in_progress",
+      "efficiency": 92,
+      "quantity": 125
+    },
+    {
+      "stageName": "Thread Rolling",
+      "status": "in_progress",
+      "efficiency": 85,
+      "quantity": 115
+    },
+    {
+      "stageName": "Heat Treatment",
+      "status": "queued",
+      "efficiency": 0,
+      "quantity": 0
+    },
+    {
+      "stageName": "Inspection",
+      "status": "queued",
+      "efficiency": 0,
+      "quantity": 0
+    }
+  ],
+  "hourlyProduction": [
+    { "hour": "06:00", "count": 110 },
+    { "hour": "07:00", "count": 118 },
+    { "hour": "08:00", "count": 122 },
+    { "hour": "09:00", "count": 121 },
+    { "hour": "10:00", "count": 125 }
+  ]
+}

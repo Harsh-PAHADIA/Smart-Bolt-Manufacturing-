@@ -1,0 +1,22 @@
+{
+  "app_title": "Smart Bolt Manufacturing",
+  "nav_dashboard": "Dashboard",
+  "nav_production": "Production Flow",
+  "nav_defects": "Defect Analysis",
+  "nav_docs": "Standard Work",
+  "kpi_production_rate": "Production Rate",
+  "kpi_defect_rate": "Defect Rate",
+  "kpi_machine_utilization": "Machine Utilization",
+  "kpi_cycle_time": "Cycle Time",
+  "status_optimal": "Optimal",
+  "status_warning": "Warning",
+  "status_error": "Error",
+  "workflow_title": "Production Workflow",
+  "defect_analysis": "Defect Analysis",
+  "pareto_chart": "Pareto Chart",
+  "root_cause_form": "Root Cause Analysis",
+  "standard_work": "Standard Work Procedures",
+  "total_defects": "Total Defects",
+  "top_defect": "Top Defect",
+  "last_updated": "Last Updated"
+}

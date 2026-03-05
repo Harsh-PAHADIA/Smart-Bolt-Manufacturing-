@@ -1,0 +1,46 @@
+{
+  "defects": [
+    {
+      "id": "D001",
+      "type": "Surface Crack",
+      "stage": "Cold Forging",
+      "count": 12,
+      "percentage": 45.0,
+      "trend": "decreasing",
+      "rootCause": "Dies wear and tear"
+    },
+    {
+      "id": "D002",
+      "type": "Thread Error",
+      "stage": "Thread Rolling",
+      "count": 8,
+      "percentage": 30.0,
+      "trend": "stable",
+      "rootCause": "Spindle calibration drift"
+    },
+    {
+      "id": "D003",
+      "type": "Hardness Issue",
+      "stage": "Heat Treatment",
+      "count": 5,
+      "percentage": 18.5,
+      "trend": "increasing",
+      "rootCause": "Temperature fluctuation"
+    },
+    {
+      "id": "D004",
+      "type": "Dimensional Error",
+      "stage": "Inspection",
+      "count": 2,
+      "percentage": 6.5,
+      "trend": "stable",
+      "rootCause": "Measurement tolerance"
+    }
+  ],
+  "defectSummary": {
+    "totalDefects": 27,
+    "defectRate": 2.4,
+    "topDefect": "Surface Crack",
+    "timeWindow": "Last 24 hours"
+  }
+}

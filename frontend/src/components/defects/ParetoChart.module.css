@@ -1,0 +1,179 @@
+.container {
+  background: white;
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow);
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin: 0 0 24px 0;
+}
+
+.chartContainer {
+  margin-bottom: 24px;
+}
+
+.chart {
+  position: relative;
+  height: 400px;
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  padding: 20px 0;
+  border-left: 2px solid var(--color-border);
+  border-bottom: 2px solid var(--color-border);
+}
+
+.yAxisLabel {
+  position: absolute;
+  left: -40px;
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-text-light);
+  white-space: nowrap;
+}
+
+.xAxisLabel {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-text-light);
+}
+
+.bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  flex: 1;
+  height: 100%;
+}
+
+.barWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  height: 100%;
+}
+
+.barContainer {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+}
+
+.bar {
+  width: 100%;
+  background: linear-gradient(180deg, #3b82f6, #1e5eb8);
+  border-radius: 4px 4px 0 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.barValue {
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px;
+}
+
+.cumulativeDot {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background-color: #ef4444;
+  border: 2px solid white;
+  border-radius: 50%;
+  right: -8px;
+  transform: translateX(50%);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  font-weight: 700;
+  color: #ef4444;
+}
+
+.label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-text);
+  text-align: center;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.legend {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  padding: 16px 0;
+  border-top: 1px solid var(--color-border);
+  margin-top: 40px;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--color-text);
+}
+
+.legendBar {
+  width: 16px;
+  height: 16px;
+  background: linear-gradient(180deg, #3b82f6, #1e5eb8);
+  border-radius: 2px;
+}
+
+.legendDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.legendDot.cumulative {
+  background-color: #ef4444;
+}
+
+.summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+  padding: 16px;
+  background-color: var(--color-light);
+  border-radius: var(--radius);
+}
+
+.summaryItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+}
+
+.summaryLabel {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-light);
+}
+
+.summaryValue {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-primary);
+}
